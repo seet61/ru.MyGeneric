@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * пример generic
@@ -52,5 +50,27 @@ public class MyGeneric {
         Iterator it = list.iterator();
         while (it.hasNext())
             System.out.printf("%d ", it.next());
+
+        //Map
+        Properties props = System.getProperties();
+        Set keys=props.keySet();
+        for (Object key:keys) {
+            String k = key.toString();
+            String v = props.getProperty(k);
+            System.out.println(k + ": " + v);
+        }
+
+
+        System.out.println((-(byte)128)>>>1 == 128 >>>1);
+        List bus = new ArrayList(2);
+        System.out.println(bus.size());
+        bus.add(0);
+        System.out.println(bus.size());
+        bus.add(1);
+        bus.add(2);
+        System.out.println(bus.size());
+        bus.add(2);
+        System.out.println(bus.size());
+
     }
 }
