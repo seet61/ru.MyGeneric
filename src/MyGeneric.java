@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.*;
 
 /**
@@ -71,6 +72,16 @@ public class MyGeneric {
         System.out.println(bus.size());
         bus.add(2);
         System.out.println(bus.size());
+
+
+        //lambda выражения
+        File file = new File(".");
+
+        File []files = file.listFiles((f)->f.toString().endsWith("iml"));
+
+        for (File f: files) {
+            System.out.println(f);
+        }
 
     }
 }
